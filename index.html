@@ -1,0 +1,25 @@
+<head>
+    <title>北京话生成器</title>
+</head>
+
+<body>
+    <h1>北京话生成器</h1><br>
+    <h2>A Beijingese Generator</h2>
+    <form id="form">
+        <label>Please type some text <br>请输入需要转换的文字: <br> <input type="text" id="in"></label>
+        <br><br>
+        <button type="submit">提交 Sumbit</button>
+    </form>
+    <p id="log"></p>
+    <script>
+        const form = document.getElementById('form');
+        const log = document.getElementById('log');
+        function logSubmit(event) {
+            log.textContent = document.getElementById("in").value.replace(/([^\u513F])/g, '$1儿');
+            event.preventDefault();
+        }
+
+
+        form.addEventListener('submit', logSubmit);
+    </script>
+</body>
